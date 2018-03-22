@@ -21,8 +21,10 @@ instagram:
 linkedin: 
 
 # avatar and Favicon
-avatar: http://7u2ho6.com1.z0.glb.clouddn.com/site-avatar.png
+#avatar: http://7u2ho6.com1.z0.glb.clouddn.com/site-avatar.png
+avatar: https://github.com/jiangyaqunqun/jiangyaqunqun.github.io/tree/master/assets/img/20150925110719_HtTCj.jpg
 favicon: http://7u2ho6.com1.z0.glb.clouddn.com/site-favicon.ico
+
 
 # disqus config
 disqus:
