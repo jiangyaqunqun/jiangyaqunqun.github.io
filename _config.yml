@@ -1,12 +1,12 @@
 # Site settings
-title: 郝苏伟的博客
-email: haosw86@gmail.com
+title: 姜亚群的博客
+email: 825907359@qq.com
 description: > # this means to ignore newlines until "baseurl:"
-  郝苏伟的博客
+  姜亚群的博客
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: http://haosuwei.github.io # the base hostname & protocol for your site
+url: http://jiangyaqunqun.github.io # the base hostname & protocol for your site
 rss_url: /pages/feed.xml
-author: haosuwei
+author: jiangyaqun
 
 # Sidebar filter
 # Choose 'tag' or 'category' as filter in sidebar.
@@ -16,7 +16,7 @@ recent_num: 10
 # Social account
 twitter: 
 weibo: 
-github: haosuwei
+github: jiangyaqunqun
 instagram: 
 linkedin: 
 
@@ -26,7 +26,7 @@ favicon: http://7u2ho6.com1.z0.glb.clouddn.com/site-favicon.ico
 
 # disqus config
 disqus:
-  shortname: haosuwei
+  shortname: jiangyaqunqun
 
 # google analytics config
 ga:
