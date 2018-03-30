@@ -10,10 +10,13 @@ description:
 ## 常用资源
 
 ### 一次删除所有本地docker镜像
-
+```
 docker image rm $(docker image ls -q) 
-
-
+```
+### 组合查询你要的字段
+```
+docker image ls --format "{{.Repository}}: {{.Tag}}"
+```
 ### 好文
 1. [PHP之道](http://wulijun.github.io/php-the-right-way/)
 2. [Cookie/Session机制详解](http://blog.csdn.net/fangaoxin/article/details/6952954)
