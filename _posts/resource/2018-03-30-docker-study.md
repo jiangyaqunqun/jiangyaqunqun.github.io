@@ -15,6 +15,10 @@ docker image rm $(docker image ls -q)
 ```
 ### 组合查询你要的字段
 ```
+docker image ls --format "{{.Repository}}: {{.Tag}}"
+```
+
+```
 root@ubuntu14:/opt/down-image# docker image ls --format "{{.Repository}}: {{.Tag}}"
 <none>: <none>
 traefik: v1.5.4
@@ -22,6 +26,9 @@ mysql: 5.7.21
 memcached: 1.5.6
 ```
 ### 组合查询且等距离显示
+```
+docker image ls --format "table {{.Repository}}\t{{.Tag}}"
+```
 ```
 root@ubuntu14:/opt/down-image# docker image ls --format "table {{.Repository}}\t{{.Tag}}"
 REPOSITORY          TAG
