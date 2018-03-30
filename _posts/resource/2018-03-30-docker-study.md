@@ -17,25 +17,25 @@ docker image rm $(docker image ls -q)
 ```
 docker image ls --format "{{.Repository}}: {{.Tag}}"
 ```
-``
+```
 root@ubuntu14:/opt/down-image# docker image ls --format "{{.Repository}}: {{.Tag}}"
 <none>: <none>
 traefik: v1.5.4
 mysql: 5.7.21
 memcached: 1.5.6
-``
+```
 ### 组合查询且等距离显示
 ```
 docker image ls --format "table {{.Repository}}\t{{.Tag}}"
 ```
-``
+```
 root@ubuntu14:/opt/down-image# docker image ls --format "table {{.Repository}}\t{{.Tag}}"
 REPOSITORY          TAG
 <none>              <none>
 traefik             v1.5.4
 mysql               5.7.21
 memcached           1.5.6
-``
+```
 ### 好文
 1. [PHP之道](http://wulijun.github.io/php-the-right-way/)
 2. [Cookie/Session机制详解](http://blog.csdn.net/fangaoxin/article/details/6952954)
