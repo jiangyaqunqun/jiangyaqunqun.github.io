@@ -104,6 +104,12 @@ root@ubuntu14:/opt/down-image#
 openvz/ubuntu                                     14.04               e1d895170986        10 minutes ago      214.8 MB
 [root@host-172-18-4-41 ~]# 
 ```
+### 容器操作
+```
+docker container start
+docker container stop
+docker container restart
+```
 
 
 ### 好文
