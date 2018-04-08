@@ -65,20 +65,22 @@ RUN echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
 
 ### 构建镜像，加标签
 ```
-root@ubuntu14:/opt/down-image# docker build jyq/ -t nginx:v3
+root@ubuntu14:/opt/down-image# cd jyq/
+root@ubuntu14:/opt/down-image/jyq# docker build -t nginx:v3 .
 Sending build context to Docker daemon  2.048kB
 Step 1/2 : FROM nginx
  ---> c5c4e8fa2cf7
 Step 2/2 : RUN echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
- ---> Running in 9454f9a382c8
-Removing intermediate container 9454f9a382c8
- ---> 3a0d523232e4
-Successfully built 3a0d523232e4
+ ---> Running in f8696fb38b12
+Removing intermediate container f8696fb38b12
+ ---> c2796dd83d40
+Successfully built c2796dd83d40
 Successfully tagged nginx:v3
-root@ubuntu14:/opt/down-image# docker images | grep nginx
-nginx                                    v3                  3a0d523232e4        About a minute ago   109MB
-nginx                                    latest              c5c4e8fa2cf7        4 days ago           109MB
-root@ubuntu14:/opt/down-image# 
+root@ubuntu14:/opt/down-image/jyq# docker images | grep nginx
+nginx                                    v3                  c2796dd83d40        35 seconds ago      109MB
+nginx                                    latest              c5c4e8fa2cf7        4 days ago          109MB
+root@ubuntu14:/opt/down-image/jyq# 
+
 ```
 
 ### 好文
