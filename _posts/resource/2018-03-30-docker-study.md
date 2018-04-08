@@ -83,6 +83,29 @@ root@ubuntu14:/opt/down-image/jyq#
 
 ```
 
+## 镜像迁移
+### 从一台机器将镜像迁移至另一台机器
+```
+root@ubuntu14:/opt/down-image# docker save openvz/ubuntu:14.04 | bzip2 | pv | ssh root@172.18.4.41 'cat | docker load'
+The authenticity of host '172.18.4.41 (172.18.4.41)' can't be established.
+ECDSA key fingerprint is ad:a8:64:82:b6:a0:db:99:3f:d2:55:67:23:61:0f:27.
+Are you sure you want to continue connecting (yes/no)?    0B 0:00:01 [   0B/s] [<=>                                                                                                   yes                                                   ]
+Warning: Permanently added '172.18.4.41' (ECDSA) to the list of known hosts.
+
+Authorized users only. All activities may be monitored and reported.
+root@172.18.4.41's password:    0B 0:00:02 [   0B/s] [<=>                                                                                                                                                         ]
+64.4MB 0:00:42 [1.53MB/s] [                                                                                                                  <=>                                     ]
+root@ubuntu14:/opt/down-image# 
+```
+
+### 登录目标机器去检查
+```
+[root@host-172-18-4-41 ~]# docker images | grep ubuntu
+openvz/ubuntu                                     14.04               e1d895170986        10 minutes ago      214.8 MB
+[root@host-172-18-4-41 ~]# 
+```
+
+
 ### 好文
 1. [PHP之道](http://wulijun.github.io/php-the-right-way/)
 2. [Cookie/Session机制详解](http://blog.csdn.net/fangaoxin/article/details/6952954)
