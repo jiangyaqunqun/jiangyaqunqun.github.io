@@ -53,6 +53,34 @@ RUN buildDeps='gcc libc6-dev make' \
 && apt-get purge -y --auto-remove $buildDeps
 ```
 
+## 构建镜像举例
+### DockerFile准备
+```
+root@ubuntu14:/opt/down-image# mkdir jyq
+root@ubuntu14:/opt/down-image# mv Dockerfile jyq/
+root@ubuntu14:/opt/down-image# cat jyq/Dockerfile 
+FROM nginx
+RUN echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
+```
+
+### 构建镜像，加标签
+```
+root@ubuntu14:/opt/down-image# docker build jyq/ -t nginx:v3
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM nginx
+ ---> c5c4e8fa2cf7
+Step 2/2 : RUN echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
+ ---> Running in 9454f9a382c8
+Removing intermediate container 9454f9a382c8
+ ---> 3a0d523232e4
+Successfully built 3a0d523232e4
+Successfully tagged nginx:v3
+root@ubuntu14:/opt/down-image# docker images | grep nginx
+nginx                                    v3                  3a0d523232e4        About a minute ago   109MB
+nginx                                    latest              c5c4e8fa2cf7        4 days ago           109MB
+root@ubuntu14:/opt/down-image# 
+```
+
 ### 好文
 1. [PHP之道](http://wulijun.github.io/php-the-right-way/)
 2. [Cookie/Session机制详解](http://blog.csdn.net/fangaoxin/article/details/6952954)
