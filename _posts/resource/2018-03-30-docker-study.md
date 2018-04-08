@@ -53,7 +53,7 @@ RUN buildDeps='gcc libc6-dev make' \
 && apt-get purge -y --auto-remove $buildDeps
 ```
 
-## 构建镜像举例
+## 以构建nginx镜像为例
 ### DockerFile准备
 ```
 root@ubuntu14:/opt/down-image# mkdir jyq
