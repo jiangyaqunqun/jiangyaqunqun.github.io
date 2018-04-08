@@ -36,6 +36,23 @@ traefik             v1.5.4
 mysql               5.7.21
 memcached           1.5.6
 ```
+### 写DockerFile每一层后，记得清理掉无关文件，否则会使镜像臃肿
+```
+FROM debian:jessie
+RUN buildDeps='gcc libc6-dev make' \
+&& apt-get update \
+&& apt-get install -y $buildDeps \
+&& wget -O redis.tar.gz "http://download.redis.io/releases/redis-3.2.5.tar.gz" \
+&& mkdir -p /usr/src/redis \
+&& tar -xzf redis.tar.gz -C /usr/src/redis --strip-components=1 \
+&& make -C /usr/src/redis \
+&& make -C /usr/src/redis install \
+&& rm -rf /var/lib/apt/lists/* \
+&& rm redis.tar.gz \
+&& rm -r /usr/src/redis \
+&& apt-get purge -y --auto-remove $buildDeps
+```
+
 ### 好文
 1. [PHP之道](http://wulijun.github.io/php-the-right-way/)
 2. [Cookie/Session机制详解](http://blog.csdn.net/fangaoxin/article/details/6952954)
