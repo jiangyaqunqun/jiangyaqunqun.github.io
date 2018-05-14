@@ -33,7 +33,7 @@ root@faecfb2fd234:/#
 ```
 
 step 3
-另外打开一个linux窗口，将本地写好的永久进程脚本拷贝至容器
+另外打开一个linux窗口，将本地写好的永久进程脚本拷贝至容器内
 ```
 root@ubuntu14:/home/huawei# cat date.sh 
 #!/bin/bash
@@ -127,5 +127,7 @@ memcached-huawei    1.5.7               2792fd37e2fd        15 seconds ago      
 
 step 8
 将memcached-huawei镜像保存成tar文件，传至已有paas环境的镜像仓库，创建容器应用，可以成功一直运行
+
+
 well done
 人生第一次修改镜像，虽然很简单，但还是开心的~
