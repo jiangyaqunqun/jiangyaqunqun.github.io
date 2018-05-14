@@ -59,3 +59,23 @@ root@ubuntu14:/home/huawei#
 ```
 
 step 5
+最初想法有点蠢，执意想要dockerfile中基于memcached:1.5.7来修改，于是就傻乎乎的将官方1.5.7打上其它标签，上面修改过的3.0打上1.5.7标签，现在看来完全没有必要，dockerfile直接引用memcached3.0就好了，给出修改标签的方法
+```
+root@ubuntu14:/home/huawei# docker images memcached
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+memcached           3.0                 524606192459        8 seconds ago       58.6MB
+memcached           1.5.7               4f178e337fba        2 days ago          58.6MB
+memcached           2.2.2               4f178e337fba        2 days ago          58.6MB
+memcached           1.1.1               78988adb8ac3        2 weeks ago         58.6MB
+root@ubuntu14:/home/huawei# docker tag memcached:1.1.1 memcached:1.1.2
+root@ubuntu14:/home/huawei# docker images memcached
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+memcached           3.0                 524606192459        26 minutes ago      58.6MB
+memcached           1.5.7               4f178e337fba        2 days ago          58.6MB
+memcached           2.2.2               4f178e337fba        2 days ago          58.6MB
+memcached           1.1.1               78988adb8ac3        2 weeks ago         58.6MB
+memcached           1.1.2               78988adb8ac3        2 weeks ago         58.6MB
+root@ubuntu14:/home/huawei# 
+```
+step 6
+
