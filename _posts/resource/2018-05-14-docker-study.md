@@ -16,7 +16,7 @@ step 1
 从docker hub拿到memcached 1.5.7官方镜像
 
 step 2
-以root权限登录进去修改时区，容器窗口保持打开
+以root权限登录进去修改时区，容器窗口保持打开，之所以一定要root用户登录，是因为容器进去默认是memcache用户，而该用户没有权限拷贝时区文件，必须要root用户才有权限
 ```
 root@ubuntu14:/opt/down-image/jyq# docker images memcached
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
