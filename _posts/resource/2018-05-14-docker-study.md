@@ -78,4 +78,17 @@ memcached           1.1.2               78988adb8ac3        2 weeks ago         
 root@ubuntu14:/home/huawei# 
 ```
 step 6
-
+本地创建dfile夹，里面创建dockerfile镜像，dockerfile文件权限默认644，dockerfile内容如下
+```
+root@ubuntu14:/opt/down-image/jyq# cd dfile/
+root@ubuntu14:/opt/down-image/jyq/dfile# ls -al
+total 12
+drwxr-xr-x 2 root root 4096 May 14 09:24 .
+drwxr-xr-x 3 root root 4096 May 14 10:27 ..
+-rw-r--r-- 1 root root   90 May 11 14:49 dockerfile
+root@ubuntu14:/opt/down-image/jyq/dfile# cat dockerfile 
+FROM memcached:1.5.7
+ENTRYPOINT [ "/etc/date.sh" ]
+ONBUILD RUN rm -rf /etc/huawei-license
+root@ubuntu14:/opt/down-image/jyq/dfile# 
+```
