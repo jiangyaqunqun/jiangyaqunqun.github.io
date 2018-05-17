@@ -15,3 +15,6 @@ description:
 
 
 ### 非关系型数据库
+优秀案例，链接如下：https://www.cnblogs.com/bldly1989/p/6721758.html
+
+#### 新浪微博与Redis
